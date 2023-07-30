@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Kangning Liu" />
+  <title>An Elegant Proof Based on a Physical Model</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">An Elegant Proof Based on a Physical Model</h1>
+<p class="author">Kangning Liu</p>
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>According to Newtonian mechanics, it is not hard to prove the
+following proposition.</p>
+<div id="p1" class="prop">
+<p><strong>Proposition 1</strong> (The principle of Minimum Potential
+Energy). <em>For conservative structural systems, of all the
+kinematically admissible deformations, those corresponding to the
+equilibrium state extremize (i.e., minimize or maximize) the total
+potential energy. If the extremum is a minimum, the equilibrium state is
+stable.</em></p>
+</div>
+<p>Sometimes it is instructive to solve optimization problems in
+mathematics by introducing some well-designed physical systems. With the
+help of the surface tension system, we will prove the following
+theorem.</p>
+<div class="thm">
+<p><strong>Theorem 1</strong>. <em>Among all n-gons with a given side
+length, the one inscribed in a circle has the largest area.</em></p>
+</div>
+<figure>
+<img src="1.jpg" />
+<figcaption>Figure 0: Schematic diagram of the theorem</figcaption>
+</figure>
+<h1 id="surface-tension-model">Surface tension model</h1>
+<p>The physical system we would like to get use of is the surface
+tension system. Surface tension is the force required to resist to
+maintain the shape of a soap bubble. The soap bubble always makes its
+area as small as possible, and surface tension is a manifestation of
+this tendency.</p>
+<p>We will consider the linear surface tension model. As shown in figure
+<a href="#tu1" data-reference-type="ref" data-reference="tu1">1</a>, for
+example, suppose there is a rectangular wire with an opening on one
+side, on which a movable wire of length <span
+class="math inline">\ell</span> is installed. A soap bubble is attached
+between the wires. Suppose there is no friction, then to maintain the
+size of the soap bubble, a force of magnitude <span
+class="math inline">F = \sigma \ell</span> is required whose direction
+is perpendicular to the wire.</p>
+<p>More generally, for soap bubbles of any shape, let <span
+class="math inline">d\ell</span> be an infinitesimal line segment of the
+boundary of the bubble. We will assume that the infinitesimal surface
+tension on <span class="math inline">d\ell</span> is <span
+class="math inline">\sigma d\ell</span>, and the direction is
+perpendicular to <span class="math inline">d\vec{\ell}</span>.</p>
+<figure id="tu1">
+<img src="2.jpg" />
+<figcaption>Figure 1: A simple surface tension system</figcaption>
+</figure>
+<p>The potential energy of the system shown in figure <a href="#tu1"
+data-reference-type="ref" data-reference="tu1">1</a> is clearly <span
+class="math inline">E_p = \sigma S</span>, where <span
+class="math inline">S</span> is the area of the bubble. This is because,
+for an infinitesimal movement <span class="math inline">\Delta x</span>
+of the purple wire, the work done by surface tension is <span
+class="math inline">\Delta W = - \sigma \ell \Delta x = - \sigma \Delta
+S</span>, so the variation of potential energy is just <span
+class="math inline">\Delta E_p = - \Delta W = \sigma \Delta
+S</span>.</p>
+<p>More generally, for a soap bubble of any shape, the potential energy
+of surface tension is also <span class="math inline">E_p = \sigma
+S</span>, with <span class="math inline">S</span> the area of the
+bubble. This can be easily seen by analyzing the work done by an
+infinitesimal segment <span class="math inline">d\ell</span> of the
+boundary of the bubble. The only way for <span
+class="math inline">d\ell</span> to do some work is to move
+perpendicular to itself, that is, to increase the area of the
+surface.</p>
+<h1 id="the-proof">The proof</h1>
+<p>Let us make a wire polygon frame with the given side length. The
+vertices of the frame are smooth hinges. One can embed the wire into a
+flat bubble, as shown in figure <a href="#tu3" data-reference-type="ref"
+data-reference="tu3">2</a>.</p>
+<figure id="tu3">
+<img src="3.jpg" />
+<figcaption>Figure 2: Embed the wire into a bubble</figcaption>
+</figure>
+<p>Now, the potential energy of this system is from surface tension,
+that is, <span class="math inline">E_p = \sigma S</span>, where <span
+class="math inline">S</span> is the area of the bubble. By proposition
+<a href="#p1" data-reference-type="ref" data-reference="p1">1</a>, when
+the system is in equilibrium, the area of the bubble should be
+minimized, which means the area of the polygon should be maximized.</p>
+<p>Let us analyze the constraining forces provided by the hinges when
+the system is in equilibrium. As shown in figure <a href="#tu4"
+data-reference-type="ref" data-reference="tu4">3</a>, consider one of
+the sides, on which the surface tension is <span
+class="math inline">\vec{F}_1</span>. Let the constraining forces of the
+hinges on the two vertices of that side be <span
+class="math inline">\vec{f}_1</span> and <span
+class="math inline">\vec{f}_2</span>. It is clear that <span
+class="math inline">\vec{f}_1</span> and <span
+class="math inline">\vec{f}_2</span> must be symmetric about the axis
+where <span class="math inline">\vec{F}_1</span> is located.</p>
+<p>Since the hinges are massless, the two constraining forces provided
+by one hinge acting on two sides must be equal in magnitude and opposite
+in direction, like <span class="math inline">\vec{f}_1</span> and <span
+class="math inline">\vec{f}&#39;_1</span> in figure <a href="#tu4"
+data-reference-type="ref" data-reference="tu4">3</a>. Thus all the
+constraining forces have the same magnitude.</p>
+<p>Considering the direction of the constraining forces, there are two
+possibilities as shown in figure <a href="#tu4"
+data-reference-type="ref" data-reference="tu4">3</a>. The first
+possibility is that one of <span class="math inline">\vec{f}_1</span>
+and <span class="math inline">\vec{f}&#39;_1</span> points inside the
+polygon, while the second case is that both <span
+class="math inline">\vec{f}_1</span> and <span
+class="math inline">\vec{f}&#39;_1</span> point outside. We claim that
+only the second case can happen. Without loss of generality, let us
+assume that <span class="math inline">\vec{f}_1</span> is pointing
+inside the polygon. Then <span class="math inline">\vec{f}&#39;_1</span>
+together with <span class="math inline">\vec{f}_3</span> and <span
+class="math inline">\vec{F}_2</span> can not keep the side they act on
+in balance, where <span class="math inline">\vec{F}_2</span> is the
+surface tension, and <span class="math inline">\vec{f}_3</span> is the
+constraining forces symmetric with <span
+class="math inline">\vec{f}&#39;_1</span> with respect to <span
+class="math inline">\vec{F}_2</span>. So only the second possibility is
+physically correct.</p>
+<figure id="tu4">
+<img src="4.jpg" />
+<figcaption>Figure 3: The direction of the constraining
+forces</figcaption>
+</figure>
+<p>Now, let us take a closer look at the angles between the constraining
+forces and the sides. As shown in figure <a href="#tu5"
+data-reference-type="ref" data-reference="tu5">4</a>, when the system is
+in equilibrium, <span class="math inline">\theta_1</span> should satisfy
+<span class="math display">2f \sin \theta_1 = F_1 = \sigma
+\ell_1,</span> where <span class="math inline">f = f_1 = f_2</span> is
+the magnitude of the constraining forces, and <span
+class="math inline">\ell_1</span> is the length of the side under
+consideration.</p>
+<figure id="tu5">
+<img src="5.jpg" />
+<figcaption>Figure 4: The angle between the constraining forces and the
+sides</figcaption>
+</figure>
+<p>If we now make perpendiculars to <span
+class="math inline">\vec{f}_1</span> and <span
+class="math inline">\vec{f}_2</span>, we will get an isosceles triangle
+with waist length <span class="math inline">r</span>. We have <span
+class="math display">r = \frac{\ell_1}{2 \sin \theta_1} =
+\frac{f}{\sigma},</span> which is independent of the length of the side.
+Note that one can do a similar analysis for adjacent sides, and it is
+not hard to find that the polygon is inscribed in a circle of radius
+<span class="math inline">r</span>!</p>
+<figure id="tu6">
+<img src="6.jpg" />
+<figcaption>Figure 5: The angle between the constraining forces and the
+sides</figcaption>
+</figure>
+<h1 id="discussion">Discussion</h1>
+<p>A direct corollary is that for a plane figure with a certain side
+length, the circle has the largest area. One can just embed a rope into
+the bubble to show this.</p>
+<p>Note that our proof does not manifest that the extremum is a minimum.
+This can be shown by arguing that the circumcircle exists and is unique.
+As shown in figure <a href="#tu7" data-reference-type="ref"
+data-reference="tu7">6</a>, we can open one of the hinges and attach the
+remaining hinges to a circle of radius <span
+class="math inline">r</span>, where <span class="math inline">2r</span>
+is equal to the length of the longest side. If the two endpoints <span
+class="math inline">p</span> and <span class="math inline">q</span>
+meet, then the circle is the circumcircle. If not, then we can slowly
+increase <span class="math inline">r</span> and denote the angle between
+<span class="math inline">p</span> and <span
+class="math inline">q</span> by <span
+class="math inline">\Theta(r)</span>. In the beginning, <span
+class="math inline">\Theta(r)</span> is greater than <span
+class="math inline">2\pi</span>. When <span class="math inline">r</span>
+is too large, as shown in figure <a href="#tu7"
+data-reference-type="ref" data-reference="tu7">6</a>, <span
+class="math inline">\Theta(r)</span> is smaller than <span
+class="math inline">2\pi</span>. It is clear that <span
+class="math inline">\Theta(r)</span> is a strictly decreasing continuous
+function of <span class="math inline">r</span>. Thus there exists a
+unique <span class="math inline">r^*</span> such that <span
+class="math inline">\Theta(r^*) = 2\pi</span>, and the radius of the
+circumcircle is just <span class="math inline">r^*</span>.</p>
+<figure id="tu7">
+<img src="7.jpg" />
+<figcaption>Figure 6: The angle between the constraining forces and the
+sides</figcaption>
+</figure>
+<p>The combination of physics and mathematics is always beautiful!</p>
+</body>
+</html>
